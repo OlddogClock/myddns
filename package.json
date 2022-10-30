@@ -1,0 +1,19 @@
+{
+  "name": "ddns_aliyun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "update.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@alicloud/alidns20150109": "^3.0.0",
+    "@alicloud/openapi-client": "^0.4.1",
+    "cron": "^2.1.0",
+    "needle": "^3.1.0",
+    "node-cron": "^3.0.2",
+    "node-windows": "^1.0.0-beta.8"
+  }
+}

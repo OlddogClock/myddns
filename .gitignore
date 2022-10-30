@@ -1,0 +1,4 @@
+*.sw[a-z]
+node_modules
+key.json
+loc.js

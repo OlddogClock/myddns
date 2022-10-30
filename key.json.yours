@@ -1,0 +1,10 @@
+{
+  "Aliyun":{
+    "accessKeyId":"阿里云access key",
+    "accessKeySecret":"阿里云access key secret",
+    "RRKeyWord":"你的二级域名，如ipv6",
+    "domainName":"你的一级域名，如example.com"
+  },
+  "ServiceName":"MyDDNS",
+  "Cron":"* * * * *"
+}
