@@ -19,31 +19,33 @@ needle.defaults({
   user_agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.24',
 })
 
-exports.getMyIP = async({log})=>{
+exports.getMyIP = async ({
+  log,
+}) => {
   let IPv6
   // 循环访问API，只要有一个返回就break
-  for(let i=0;i<getIPv6Api.length;i++){
+  for (let i = 0; i < getIPv6Api.length; i++) {
     const response = await needle('get', getIPv6Api[i])
     try {
-      if(response.statusCode == 200){
+      if (response.statusCode == 200) {
         let ipv6match = ''
         // 有的API返回的是JSON格式
-        if(response.parser==='json'){
+        if (response.parser === 'json') {
           ipv6match = JSON.stringify(response.body).match(reg)
-        }else{
+        } else {
           ipv6match = response.body.match(reg)
         }
-        if(ipv6match){
+        if (ipv6match) {
           // 命中IPv6正则，返回
           IPv6 = ipv6match[0]
           break
         }
       }
-    }catch(e){
+    } catch (e) {
       log.error(e.message)
     }
   }
-  if(!IPv6){
+  if (!IPv6) {
     log.error(`All API Unavailable`)
     return false
   }

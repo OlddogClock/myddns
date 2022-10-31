@@ -14,10 +14,11 @@
     "plugins": [],
     "rules": {
         "comma-dangle": ["error", "always-multiline"],
-        "space-before-function-paren": ["error", "never"], // 函数圆括号之前不需要一个空格
+        "space-before-function-paren": ["error", "always"],
         "camelcase": "off", // 驼峰命名
         "no-template-curly-in-string": "off", // 禁止在常规字符串中出现模板字面量占位符语法
         "quote-props": ["error", "consistent"], // 要求对象字面量属性名称使用一致的引号，要么全部用引号，要么都不用
-        "no-unsafe-optional-chaining": "error"
+        "no-unsafe-optional-chaining": "error",
+        "semi":[2, "never"]
     }
 }

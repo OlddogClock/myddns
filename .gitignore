@@ -2,3 +2,4 @@
 node_modules
 app/key.json
 app/loc.js
+app/daemon
