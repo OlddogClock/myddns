@@ -1,15 +1,15 @@
 
 const {default: Client, DescribeDomainRecordsRequest, UpdateDomainRecordRequest} = require('@alicloud/alidns20150109')
 const { Config } = require('@alicloud/openapi-client')
-const {default: Util, RuntimeOptions} = require('@alicloud/tea-util')
+const {RuntimeOptions} = require('@alicloud/tea-util')
 
-exports.updateDomain = async ({IPv6,accessKeyId,accessKeySecret,RRKeyWord,domainName,log})=>{
+exports.updateDomain = async({IPv6,accessKeyId,accessKeySecret,RRKeyWord,domainName,log})=>{
   if(!IPv6){
     return false
   }
 
   const config = new Config({
-    accessKeyId,accessKeySecret
+    accessKeyId,accessKeySecret,
   })
   config.endpoint = 'dns.aliyuncs.com'
   const client = new Client(config)
@@ -41,9 +41,9 @@ exports.updateDomain = async ({IPv6,accessKeyId,accessKeySecret,RRKeyWord,domain
 
   try{
     const a = await client.updateDomainRecordWithOptions(setRecordRequest, runtime)
-    log.info(`SUCCESS ${new Date(a.headers.date).toLocaleString()}`)
+    log.info(`${new Date(a.headers.date).toLocaleString()} 域名解析已改为 ${IPv6}`)
   }catch(e){
     log.error(e.message)
   }
-  
+  return true
 }

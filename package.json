@@ -1,7 +1,7 @@
 {
-  "name": "ddns_aliyun",
+  "name": "myddns",
   "version": "1.0.0",
-  "description": "",
+  "description": "基于IPv6的动态域名服务，使用Nodejs实现",
   "main": "update.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,10 @@
     "needle": "^3.1.0",
     "node-cron": "^3.0.2",
     "node-windows": "^1.0.0-beta.8"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0"
   }
 }

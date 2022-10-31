@@ -1,4 +1,4 @@
 *.sw[a-z]
 node_modules
-key.json
-loc.js
+app/key.json
+app/loc.js

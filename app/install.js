@@ -3,7 +3,7 @@ const {ServiceName} = require('./key.json')
 
 const svc = new Service({
   name:ServiceName || 'MyDDNS',
-  script: require('path').join(__dirname,'net.js'),
+  script: require('path').join(__dirname,'app.js'),
   //, allowServiceLogon: true 
 });
 
@@ -12,4 +12,4 @@ svc.on('install',function(){
   console.log('service installed')
 });
 
-svc.install();
+svc.install()
