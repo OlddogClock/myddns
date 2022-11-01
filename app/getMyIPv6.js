@@ -9,6 +9,7 @@ const getIPv6Api = [
   'https://ipv6out.ipqi.co/?callback=cb',
   'https://ip.gs/ip',
   'https://www.cz88.net/api/cz88/ip/base?ip=',
+  'https://v6.ipv6-test.com/api/myip.php',
 ]
 
 // 获取IPv6地址的正则
